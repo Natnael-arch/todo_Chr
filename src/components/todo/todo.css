@@ -1,0 +1,168 @@
+/* Dark Mode Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background: radial-gradient(ellipse at center, #0f0f1a, #030309);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Background Glow Effects */
+  .background-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(173, 83, 137, 0.8), transparent);
+    filter: blur(100px);
+    animation: glowAnimation 6s ease-in-out infinite alternate;
+    z-index: -5;
+  }
+  
+  .background-glow:nth-child(2) {
+    left: 20%;
+    top: 15%;
+    background: radial-gradient(circle, rgba(74, 195, 255, 0.8), transparent);
+  }
+  
+  .background-glow:nth-child(3) {
+    right: 10%;
+    bottom: 10%;
+    background: radial-gradient(circle, rgba(255, 178, 102, 0.8), transparent);
+  }
+  
+  @keyframes glowAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+  
+  /* Glassy To-Do Card */
+  .todo-container-dark {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .todo-card-dark {
+    backdrop-filter: blur(20px);
+    background: rgba(25, 25, 40, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(74, 195, 255, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    color: #fff;
+  }
+  
+  /* Header */
+  .todo-header-dark {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .todo-header-dark h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .todo-header-dark p {
+    font-size: 1rem;
+    color: rgba(200, 200, 255, 0.8);
+  }
+  
+  /* Form */
+  .todo-form-dark {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .todo-form-dark input {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: rgba(50, 50, 70, 0.8);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .todo-form-dark input:focus {
+    border: 1px solid #74ebd5;
+  }
+  
+  .todo-form-dark button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, #5a5ae3, #74ebd5);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .todo-form-dark button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(74, 195, 255, 0.5);
+  }
+  
+  /* To-Do List */
+  .todo-list-dark {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .todo-item-dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(50, 50, 70, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .todo-item-dark.completed-dark span {
+    text-decoration: line-through;
+    color: rgba(200, 200, 255, 0.5);
+  }
+  
+  .todo-item-dark:hover {
+    background: rgba(74, 195, 255, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  .todo-item-dark button {
+    background: transparent;
+    border: none;
+    color: #ff6b6b;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .todo-item-dark button:hover {
+    transform: scale(1.2);
+  }
+  

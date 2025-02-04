@@ -1,0 +1,42 @@
+.date-picker {
+  display: flex;
+  gap: 10px;
+}
+
+.date-picker select {
+  width: 120px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* Remove default dropdown arrow for custom styling */
+  background: white;
+  cursor: pointer;
+}
+
+.date-picker select:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight border on focus */
+}
+
+.date-picker select[multiple],
+.date-picker select[size] {
+  height: auto; /* Allow height to adjust based on content */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Arrange options in 3 columns */
+  gap: 5px;
+  overflow-y: auto;
+  padding: 8px;
+  background: white;
+  border-radius: 4px;
+}
+
+.date-picker option {
+  padding: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.date-picker option:hover {
+  background: #f0f0f0; /* Highlight on hover */
+}

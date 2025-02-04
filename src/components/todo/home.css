@@ -1,0 +1,111 @@
+.todo-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+/* 
+.background-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 35%;
+    left: 40%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74, 195, 255, 0.8), transparent);
+    filter: blur(80px);
+    animation: glowAnimation 6s ease-in-out infinite alternate;
+    z-index: -5;
+  }
+  
+  .background-glow:nth-child(2) {
+    left: 15%;
+    top: 20%;
+    background: radial-gradient(circle, rgba(173, 83, 137, 0.8), transparent);
+  }
+  
+  .background-glow:nth-child(3) {
+    right: 10%;
+    bottom: 15%;
+    background: radial-gradient(circle, rgba(255, 178, 102, 0.8), transparent);
+  }
+  
+  @keyframes glowAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  } */
+.todo-container {
+  display: flex;
+  gap: 1%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  align-items: start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Left design  */
+.todo-left {
+  min-width: 20rem;
+  width: 20%;
+  min-height: 50vh;
+  max-height: max-content;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(25, 25, 40, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(74, 195, 255, 0.2);
+  padding: 2rem;
+  color: white;
+}
+.header {
+  margin-bottom: 2rem; /* Add margin-bottom for spacing */
+}
+.header-title{
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.todo-left hr {
+  height: .5px;
+  border: none;
+  background: rgb(173, 173, 173);
+}
+.catagories{
+  padding: 1rem 0;
+  gap: .3rem;
+}
+.catagories hr{
+  height: .5px;
+  border: none;
+  background: rgb(173, 173, 173);
+}
+.row{
+  padding: 1rem 1rem;
+  background: rgba(173, 173, 173, 0.2);
+  width: 100%;
+  border-radius: 5px;
+}
+.row:hover{
+  cursor: pointer;
+}
+.header-desc {
+  font-weight: 400;
+  color: rgb(197, 197, 197);
+  font-size: .8rem;
+}
+
+/* Right design */
+.todo-right {
+  min-width: 60rem;
+  height: 31rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  flex: 1;
+}

@@ -1,0 +1,23 @@
+/*query get_all_posts(){
+    return post @*{}(
+        .content
+    );
+}
+*/
+query get_tasks(user_id: byte_array) {
+    // Find the user by account_id
+    val user = user @ { .id == user_id };
+
+    // Fetch tasks associated with the user
+    val tasks = post @ * { .user.id == user.id } (
+        .task_name,
+        .deadline,
+        .urgency
+    );
+
+    return tasks;
+}
+query get_user(account_id: byte_array) {
+    val user = user @ { .id == account_id };
+    return user;
+}

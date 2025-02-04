@@ -1,0 +1,19 @@
+entity user {
+
+  key id: byte_array;
+  key account;
+}
+
+entity post {
+  timestamp = op_context.last_block_time;
+  index user;
+  mutable task_name: text;
+  deadline: text;
+  mutable urgency: text;
+  
+}
+struct post_dto{
+    post: struct<post>;
+    content: text;
+
+}

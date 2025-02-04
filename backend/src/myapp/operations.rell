@@ -1,0 +1,39 @@
+// operation create_user(pubkey) {
+//     val account = create_account_with_auth(single_sig_auth_descriptor(pubkey, set(["A", "T", "MySession"])));
+//     create user ( pubkey, account );
+// }
+
+function require_is_signer(pubkey) = require(op_context.is_signer(pubkey), "User must sign this operation");
+function require_user(id: byte_array) = require(user @? { id }, "User with id %b does not exist".format(id));
+
+operation add_task(task_name: text, deadline:text, urgency:text) {
+  val account = auth.authenticate();
+  require(task_name.size() <= 255, "A post cannot be longer than 255 letters");
+  val user = user @ { account };
+
+
+  create post ( user, 
+  task_name,
+   deadline, 
+   urgency, 
+  );
+}
+    
+operation update_todo(text: text, due_date: integer? = null) {
+    val account = auth.authenticate();
+    val user = user @ { account };
+    val todo_update = require(post @? { .user == user });
+    
+    update todo_update ( 
+        task_name = text,
+        urgency = text,
+    );
+}
+
+operation delete_todo() {
+    val account = auth.authenticate();
+    val user = user @ { account };
+    val todo_deletion = require(post @? {.user == user });
+    delete todo_deletion;
+}
+

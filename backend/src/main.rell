@@ -1,0 +1,9 @@
+module;
+import myapp.*;
+import registration.*;
+import lib.ft4.core.accounts.{ account, single_sig_auth_descriptor, create_account_with_auth };
+import lib.ft4.auth;
+@extend(auth.auth_handler)
+function () = auth.add_auth_handler(
+  flags = ["S"]
+);

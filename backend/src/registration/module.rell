@@ -1,0 +1,12 @@
+module;
+import ^.myapp.*;
+import lib.ft4.accounts.strategies.open;
+import lib.ft4.accounts.strategies.{ register_account };
+
+
+
+operation register_user() {
+    
+    val account = register_account();
+    val user = create user (id=account.id, account );
+}

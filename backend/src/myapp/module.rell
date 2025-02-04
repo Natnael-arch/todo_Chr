@@ -1,0 +1,4 @@
+module;
+
+import lib.ft4.core.accounts.{ account, single_sig_auth_descriptor, create_account_with_auth };
+import lib.ft4.auth;

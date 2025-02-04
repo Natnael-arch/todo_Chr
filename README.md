@@ -1,4 +1,4 @@
-![Screenshot of the Todo App](./screenshot.png)
+![Screenshot of the Todo App](./Screenshot.png)
 # Todo App with Chromia Blockchain Integration
 
 ## Author Information
@@ -51,7 +51,6 @@ This Todo App allows users to manage tasks efficiently by adding, viewing, updat
    npm run dev
    ```
 
-   The app will be available at `http://localhost:3000`.
 
 ## Usage Instructions
 1. Connect your EVM wallet (e.g., MetaMask) to the application.

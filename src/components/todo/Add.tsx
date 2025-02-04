@@ -61,7 +61,7 @@ const CreateTaskForm: React.FC = () => {
       console.log("🔹 Submitting task...");
       await session.call({
         name: "add_task",
-        args: [formData.taskName, formData.deadline, formData.taskName],
+        args: [formData.taskName, formData.deadline, formData.urgency],
       });
 
       alert("✅ Task successfully added!");

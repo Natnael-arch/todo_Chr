@@ -1,7 +1,8 @@
-![Screenshot of the Todo App](./Screenshot.png)
+
 # Todo App with Chromia Blockchain Integration
+![Screenshot of the Todo App](./Screenshot.png)
 
-
+video
 [![Watch the video](https://img.youtube.com/vi/dmgQXFeejRk/maxresdefault.jpg)](https://www.youtube.com/watch?v=dmgQXFeejRk)
 
 ## Author Information

@@ -1,6 +1,9 @@
 ![Screenshot of the Todo App](./Screenshot.png)
 # Todo App with Chromia Blockchain Integration
 
+
+[![Watch the video](https://img.youtube.com/vi/dmgQXFeejRk/maxresdefault.jpg)](https://www.youtube.com/watch?v=dmgQXFeejRk)
+
 ## Author Information
 **Name**: Natnael Beshane  
 **Email**: natnaelb8@gmail.com  
@@ -50,7 +53,39 @@ This Todo App allows users to manage tasks efficiently by adding, viewing, updat
    ```bash
    npm run dev
    ```
+## Blockchain Setup
+### Install Rell Dependencies
+Use the `chromia.yml` file to install the necessary dependencies listed under the `libs` tag:
+```bash
+chr install
+```
 
+### Start the Local Test Node
+Ensure your local test node is active by running:
+```bash
+chr node start
+```
+
+Access the dapp locally using the following parameters:
+```bash
+url=http://localhost:7740
+brid_id=<generated after node starts>
+```
+
+### Optional: Reset the Database
+If you want to start fresh, reset the database schema with:
+```bash
+chr node start --wipe
+```
+
+
+### Update the Local Test Node After Changes
+If you modify the Rell code and need to apply changes to the running local test node, run:
+```bash
+chr node update
+```
+
+Ensure you use the same `chromia.yml` configuration and parameters as when the node was initially started.
 
 ## Usage Instructions
 1. Connect your EVM wallet (e.g., MetaMask) to the application.

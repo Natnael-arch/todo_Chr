@@ -6,34 +6,44 @@
 function require_is_signer(pubkey) = require(op_context.is_signer(pubkey), "User must sign this operation");
 function require_user(id: byte_array) = require(user @? { id }, "User with id %b does not exist".format(id));
 
-operation add_task(task_name: text, deadline:text, urgency:text) {
+
+operation add_task(task_name: text, description:text, deadline:text, priority:text, status:text ) {
   val account = auth.authenticate();
   require(task_name.size() <= 255, "A post cannot be longer than 255 letters");
   val user = user @ { account };
 
 
-  create post ( user, 
-  task_name,
-   deadline, 
-   urgency, 
+  create post ( 
+    user, 
+    task_name,
+    description,
+    deadline, 
+    priority, 
+    status,
+    
+   
   );
 }
     
-operation update_todo(text: text, due_date: integer? = null) {
+operation update_task(task_id: byte_array,task_name: text,description:text, due_date: text, priority:text, status: text) {
     val account = auth.authenticate();
     val user = user @ { account };
-    val todo_update = require(post @? { .user == user });
+    val todo_update = require(post @? { .user == user, .id == task_id });
     
     update todo_update ( 
-        task_name = text,
-        urgency = text,
+        task_name = task_name,
+        description=description,
+        deadline= due_date,
+        status = status,
+        priority=priority,
+        
     );
 }
 
-operation delete_todo() {
+operation delete_task(todo_id:byte_array) {
     val account = auth.authenticate();
     val user = user @ { account };
-    val todo_deletion = require(post @? {.user == user });
-    delete todo_deletion;
+    val todo_task_deletion = require(post @? { .id == todo_id, .user == user });
+    delete todo_task_deletion;
 }
 

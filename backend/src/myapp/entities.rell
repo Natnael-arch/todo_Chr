@@ -5,12 +5,13 @@ entity user {
 }
 
 entity post {
-  timestamp = op_context.last_block_time;
   index user;
   mutable task_name: text;
-  deadline: text;
-  mutable urgency: text;
-  
+  mutable description: text;
+  mutable status: text;
+  mutable deadline: text;
+  mutable priority: text;
+  key id: byte_array = op_context.transaction.tx_rid;
 }
 struct post_dto{
     post: struct<post>;

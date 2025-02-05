@@ -25,20 +25,29 @@ const Home: React.FC = () => {
 
   return (
     <div className="todo-wrapper">
-      <div className="todo-container flexCenter">
+      {/* <span className="header-title">TODO Dapp</span> */}
+      <div className="todo-container flexColCenter">
         {/* Left container */}
-        <div className="todo-left">
+        <div className="todo-left flexCenter">
           <div className="header flexColCenter">
             <span className="header-title">TODO Dapp</span>
-            <span className="header-desc">Plan your day with us</span>
+            {/* <span className="header-desc">Plan your day with us</span> */}
           </div>
-          <hr />
-          <div className="catagories flexColCenter">
-            <span className="row" onClick={() => onNavClick("add")}>Add An Item</span>
+          <div className="catagories flexCenter">
+            <span className="row" onClick={() => onNavClick("add")}>Add</span>
             <span className="row" onClick={() => onNavClick("urgent")}>Urgent</span>
             <span className="row" onClick={() => onNavClick("all")}>All</span>
+            <span className="row" onClick={() => onNavClick("completed")}>Completed</span>
             {/* <span className="row" onClick={() => onNavClick("weekly")}>Weekly Plans</span>
             <span className="row" onClick={() => onNavClick("daily")}>Daily Plans</span> */}
+          </div>
+          <div className="nav-right flexCenter">
+            <div className="theme">
+              theme
+            </div>
+            <div className="user">
+              user
+            </div>
           </div>
         </div>
 

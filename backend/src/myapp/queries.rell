@@ -12,7 +12,10 @@ query get_tasks(user_id: byte_array) {
     val tasks = post @ * { .user.id == user.id } (
         .task_name,
         .deadline,
-        .urgency
+        .priority,
+        .description,
+        .status,
+        .id
     );
 
     return tasks;

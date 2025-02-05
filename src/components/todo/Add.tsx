@@ -10,6 +10,7 @@ const CreateTaskForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     taskName: "",
+    description: "",
     urgency: "",
     deadline: "",
   });
@@ -43,9 +44,9 @@ const CreateTaskForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { taskName, urgency, deadline } = formData;
+    const { taskName, urgency, deadline, description } = formData;
 
-    if (!taskName || !urgency || !deadline) {
+    if (!taskName || !urgency || !deadline || !description) {
       alert("Please fill out all fields.");
       return;
     }
@@ -61,7 +62,7 @@ const CreateTaskForm: React.FC = () => {
       console.log("🔹 Submitting task...");
       await session.call({
         name: "add_task",
-        args: [formData.taskName, formData.deadline, formData.urgency],
+        args: [formData.taskName, formData.description, formData.deadline, formData.urgency, "incomplete"],
       });
 
       alert("✅ Task successfully added!");
@@ -71,7 +72,7 @@ const CreateTaskForm: React.FC = () => {
       alert("Failed to add task. Please try again.");
     } finally {
       setIsLoading(false);
-      setFormData({ taskName: "", urgency: "", deadline: "" });
+      setFormData({ taskName: "", urgency: "", deadline: "", description:""});
     }
   };
 
@@ -86,6 +87,14 @@ const CreateTaskForm: React.FC = () => {
               name="taskName"
               placeholder="Task Name"
               value={formData.taskName}
+              onChange={handleInputChange}
+              required
+            />
+            <span>Description:</span>
+            <input
+              name="description"
+              placeholder="Task Description"
+              value={formData.description}
               onChange={handleInputChange}
               required
             />
